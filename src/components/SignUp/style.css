@@ -1,0 +1,13 @@
+.form-control {
+    width: 250px;
+}
+.sign-box {
+    padding: 30px;
+    border: hidden;
+    margin-bottom: 100px ;
+    transition: 0.6s;
+}
+.sign-box:hover {
+    box-shadow: 0 0 24px 7px rgba(34, 60, 80, 0.2);
+
+}

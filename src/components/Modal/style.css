@@ -1,0 +1,24 @@
+
+.modal-window {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.64);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    max-width: 50%;
+    padding: 20px;
+    position: relative;
+}
+.close-modal {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 18px;
+    border: inherit;
+}
