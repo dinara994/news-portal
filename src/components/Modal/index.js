@@ -14,9 +14,6 @@ const handleSubmit = (e) => {
     axios.post('https://613f1faee9d92a0017e17474.mockapi.io/api/', callBack)
         .then(({data}) => setIsOpen(false))
 }
-
-
-
     return (
         <>
         <div className='d-flex justify-content-center align-content-center'>

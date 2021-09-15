@@ -10,8 +10,6 @@ const Home = () => {
             .then(({data}) => setNewDet(data))
     },[])
 
-
-
     return (
         <div className='container'>
             <div className="main">
