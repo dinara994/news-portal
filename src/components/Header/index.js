@@ -17,7 +17,12 @@ const Header = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         axios.post('https://613f1faee9d92a0017e17474.mockapi.io/callback', user)
-            .then(() => setIsOpen(false))
+            .then(() => {
+                setSentSuccess(true)
+                setTimeout(() => {
+                    setIsOpen(false)
+                setSentSuccess(false)},2000)
+            })
     }
 
 
@@ -27,12 +32,13 @@ const Header = () => {
             <div className='d-flex me-3'>
                 <NavLink exact to='/' className='me-3'>Home</NavLink>
                 <NavLink to='/news'  className='me-3'>News</NavLink>
-                <NavLink to='/modal'  className='me-3'>Application</NavLink>
+                <NavLink to='/students'  className='me-3'>Students</NavLink>
                 <NavLink to='/signUp' className='me-3'>Sign up</NavLink>
                 <NavLink to='/signIn' className='me-3'>Sign in</NavLink>
-                <button className='close-modal' onClick={() => setIsOpen(true)}>Регистрация</button>
-
+                <button className='close-modal ms-5' onClick={() => setIsOpen(true)}>Регистрация</button>
             </div>
+
+
             <div className='d-flex justify-content-center align-content-center'>
                 {
                     isOpen &&
@@ -43,7 +49,7 @@ const Header = () => {
                                sentSuccess ? 'Успешно отправлено!' :
                                 <>
                                     <h3>Заполните платформу</h3>
-                                    <form onSubmit={handleSubmit}>
+                                    <form onSubmit={handleSubmit} className='text-aline-center'>
                                         <div className="mb-3">
                                             <label htmlFor="name" className="form-label">Name</label>
                                             <input onChange={handleChange} type="text" className="form-control" id="name" required/>
@@ -72,7 +78,6 @@ const Header = () => {
                 }
 
             </div>
-
         </header>
     );
 };

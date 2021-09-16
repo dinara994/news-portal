@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './style.css'
 import axios from "axios";
 
-const Modal = () => {
+const Students = () => {
 
     return (
         <>
@@ -12,4 +12,4 @@ const Modal = () => {
 };
 
 
-export default Modal;
+export default Students;

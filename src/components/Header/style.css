@@ -14,7 +14,7 @@
     z-index: 99;
 }
 .modal-content {
-    max-width: 50%;
+    max-width: 40%;
     padding: 20px;
     position: relative;
 }
@@ -24,4 +24,5 @@
     top: 10px;
     font-size: 18px;
     border: inherit;
+
 }

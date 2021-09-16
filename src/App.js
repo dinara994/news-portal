@@ -6,7 +6,7 @@ import Layout from "./components/Layout";
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
 import NewsDetails from "./components/NewsDetails";
-import Modal from "./components/Modal";
+import Students from "./components/Students";
 
 function App() {
     return (
@@ -16,7 +16,7 @@ function App() {
                 <Route exact path='/'><Home /></Route>
                 <Route exact path='/news'><News /></Route>
                 <Route exact path='/news/:id'><NewsDetails /></Route>
-                <Route exact path='/modal'><Modal /></Route>
+                <Route exact path='/students'><Students /></Route>
                 <Route path='/signUp'><SignUp /></Route>
                 <Route path='/signIn'><SignIn /> </Route>
 
