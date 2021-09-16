@@ -8,9 +8,11 @@ const Modal = () => {
 
 const handleChange = (e) => {
         setCallback({...callBack, [e.target.id] : e.target.value})
+    //капируем все старое, название ключа записывается [клик  id] = выдатьт значение
 }
 
 const handleSubmit = (e) => {
+        e.preventDefault()
     axios.post('https://613f1faee9d92a0017e17474.mockapi.io/api/', callBack)
         .then(({data}) => setIsOpen(false))
 }
