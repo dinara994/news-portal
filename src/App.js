@@ -1,10 +1,10 @@
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './index.css'
-import News from "./Views/News";
-import Home from "./Views/Home";
-import Layout from "./components/Layout";
-import SignUp from "./components/SignUp";
-import SignIn from "./components/SignIn";
+import News from "./components/News";
+import Home from "./components/Home";
+import Layout from "./Views/Layout";
+import SignUp from "./Views/SignUp";
+import SignIn from "./Views/SignIn";
 import NewsDetails from "./components/NewsDetails";
 import Students from "./Views/Students";
 import NotFound from "./components/NotFound";

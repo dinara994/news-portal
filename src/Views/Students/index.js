@@ -3,6 +3,7 @@ import './style.css'
 import axios from "axios";
 import Modal from 'react-modal';
 import {useForm} from "react-hook-form";
+//валидация полей
 
 
 const Students = () => {
@@ -113,19 +114,18 @@ axios.post('https://613f1faee9d92a0017e17474.mockapi.io/students', data) //от�
                         />
                         {errors.laptop && <div className='text-danger'>Заполните поле.</div>}
                     </div>
-                </form>
                 <div className='d-flex my-2'>
-                    <select id="inputState" class="form-select" {...register('group', {required:true})}>
+                    <select id="inputState" className="form-select" {...register('group', {required:true})}>
                         <option selected value="Выберите">Группа...</option>
                         <option value="morning">2-й поток утро</option>
                         <option value="night">2-й поток вечер</option>
                     </select>
-                    <select id="inputState" class="form-select" {...register('status', {required:true})}>
+                    <select id="inputState" className="form-select" {...register('status', {required:true})}>
                         <option selected value="статус">Выберите варианты...</option>
                         <option value="morning">Резидент</option>
                         <option value="night"></option>
                     </select>
-                    <select id="inputState" class="form-select" {...register('gender', {required:true})}>
+                    <select id="inputState" className="form-select" {...register('gender', {required:true})}>
                         <option selected value="Выберите">Выберите...</option>
                         <option value="0">Парень</option>
                         <option value="1">Девушка</option>
@@ -133,20 +133,15 @@ axios.post('https://613f1faee9d92a0017e17474.mockapi.io/students', data) //от�
                 </div>
                 <div>
                     <p>Сообщение</p>
-                    <textarea className='p-2' name="comment" id="comment" placeholder='Comments...'></textarea>
+                    <textarea className='p-2' name="comment" id="comment" placeholder='Comments...'
+                              {...register('comment')}
+                    ></textarea>
                 </div>
-
-                <div className="col-12">
-                    <button type="submit" className="btn btn-primary d-block ms-auto">Add students</button>
-                </div>
+                    <button type="submit" className="btn btn-primary d-block ms-auto" >Add students</button>
+                </form>
             </Modal>
             {/*Киевская Орозбекова/Турусбекова*/}
             {/*Кожомамбето Ислам*/}
-
-
-
-
-
 
         </div>
     );

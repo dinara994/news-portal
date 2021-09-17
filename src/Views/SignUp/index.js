@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css'
-import Button from "../Button";
+import Button from "../../components/Button";
 import {Link} from "react-router-dom";
 
 const SignUp = () => {
