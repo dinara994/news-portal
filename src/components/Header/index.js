@@ -35,8 +35,7 @@ const Header = () => {
                 <NavLink to='/students'  className='me-3'>Students</NavLink>
                 <NavLink to='/signUp' className='me-3'>Sign up</NavLink>
                 <NavLink to='/signIn' className='me-3'>Sign in</NavLink>
-                <button className='close-modal ms-5' onClick={() => setIsOpen(true)}>Регистрация</button>
-            </div>
+                <button className='header-btn ms-5' onClick={() => setIsOpen(true)}>Регистрация</button>
 
 
             <div className='d-flex justify-content-center align-content-center'>
@@ -78,6 +77,8 @@ const Header = () => {
                 }
 
             </div>
+            </div>
+
         </header>
     );
 };

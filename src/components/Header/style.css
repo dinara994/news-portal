@@ -26,3 +26,13 @@
     border: inherit;
 
 }
+.header-btn {
+    border: inherit;
+    background: darkkhaki;
+    width: 150px;
+    height: 30px;
+}
+.active {
+    text-decoration:  underline;
+    color: blue;
+}
