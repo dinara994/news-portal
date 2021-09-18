@@ -3,6 +3,9 @@ import './style.css'
 import axios from "axios";
 import Modal from 'react-modal';
 import {useForm} from "react-hook-form";
+import StudentItem from "../../components/StudentItem";
+import Button from "../../components/Button";
+import FormInput from "../../components/FormInput";
 //валидация полей
 
 
@@ -23,7 +26,6 @@ axios.post('https://613f1faee9d92a0017e17474.mockapi.io/students', data) //от�
         setShowModal(false) //выключи модалку
         reset()//очисти форму
     })
-
     }
 
     useEffect(() => {
@@ -52,25 +54,17 @@ axios.post('https://613f1faee9d92a0017e17474.mockapi.io/students', data) //от�
                 <th className="col py-3 px-2">Name</th>
                 <th className="col py-3 px-2">Phone</th>
                 <th className="col py-3 px-2'">Contract</th>
+                <th className="col py-3 px-2'">Payoff</th>
+                <th className="col py-3 px-2'">Laptop</th>
+                <th className="col py-3 px-2'">Group</th>
+                <th className="col py-3 px-2'">Status</th>
+                <th className="col py-3 px-2'">Gender</th>
+                <th className="col py-3 px-2'">Edit</th>
+                <th className="col py-3 px-2'">Delete</th>
                 </thead>
-                {
-                    students.map((item, idx) =>
-                        <>
-                            <tbody>
-                            <tr>
-                                <td className='py-4 px-3 ' scope="row">{idx + 1}</td>
-                                <td className='py-4 px-4'>{item.name}</td>
-                                <td className='py-4 px-4'>{item.phone}</td>
-                                <td className='py-4 px-4'>{item.contract}</td>
-                            </tr>
-                            </tbody>
-                        </>
-                    )
-                }
+                {students.map((item, idx) => <StudentItem key={item.id} item={item} idx={idx}/>)}
             </table>
-            <button type="button" className="d-block ms-auto btn btn-primary btn-lg"
-                    onClick={() => setShowModal(true)}>Add new student
-            </button>
+            <Button  onClick={() => setShowModal(true)} title='Add new students'/>
             <Modal
                 isOpen={showModal}
                 onRequestClose={closeModal}
@@ -79,12 +73,7 @@ axios.post('https://613f1faee9d92a0017e17474.mockapi.io/students', data) //от�
                 <form onSubmit={handleSubmit(sendData)} className="row g-3 mw-50 ">
                     {/*handleSub.=> берет => передает обьект в sendData  с всеми данными(полями) с inputa*/}
                     <div className="col-md-6">
-                        <label htmlFor="name" className="form-label">Имя</label>
-                        <input type="text" className="form-control" id="name"
-                            autoComplete='off' // отключает подсказку
-                               {...register('name', {required:true, minLength:3})}
-                        />
-                        {errors.name && <div className='text-danger'>Заполните поле.</div>}
+                        <FormInput />
                     </div>
                     <div className="col-md-6">
                         <label htmlFor="phone" className="form-label">Номер телефона</label>
@@ -94,11 +83,11 @@ axios.post('https://613f1faee9d92a0017e17474.mockapi.io/students', data) //от�
                         {errors.phone && <div className='text-danger'>Заполните поле.</div>}
                     </div>
                     <div className="col-md-6">
-                        <label htmlFor="money" className="form-label">Сумма контракта</label>
+                        <label htmlFor="contract" className="form-label">Сумма контракта</label>
                         <input type="text" className="form-control" id="money"
-                               {...register('money', {required:true})}
+                               {...register('contract', {required:true})}
                         />
-                        {errors.money && <div className='text-danger'>Заполните поле.</div>}
+                        {errors.contract && <div className='text-danger'>Заполните поле.</div>}
                     </div>
                     <div className="col-md-6">
                         <label htmlFor="payoff" className="form-label">Оплата</label>
@@ -117,18 +106,18 @@ axios.post('https://613f1faee9d92a0017e17474.mockapi.io/students', data) //от�
                 <div className='d-flex my-2'>
                     <select id="inputState" className="form-select" {...register('group', {required:true})}>
                         <option selected value="Выберите">Группа...</option>
-                        <option value="morning">2-й поток утро</option>
-                        <option value="night">2-й поток вечер</option>
+                        <option value="2-й поток утро">2-й поток утро</option>
+                        <option value="2-й поток вечер">2-й поток вечер</option>
                     </select>
                     <select id="inputState" className="form-select" {...register('status', {required:true})}>
                         <option selected value="статус">Выберите варианты...</option>
-                        <option value="morning">Резидент</option>
-                        <option value="night"></option>
+                        <option value="resident">Резидент</option>
+                        <option value="active">Active</option>
                     </select>
                     <select id="inputState" className="form-select" {...register('gender', {required:true})}>
                         <option selected value="Выберите">Выберите...</option>
-                        <option value="0">Парень</option>
-                        <option value="1">Девушка</option>
+                        <option value="Парень">Парень</option>
+                        <option value="Девушка">Девушка</option>
                     </select>
                 </div>
                 <div>
@@ -137,7 +126,7 @@ axios.post('https://613f1faee9d92a0017e17474.mockapi.io/students', data) //от�
                               {...register('comment')}
                     ></textarea>
                 </div>
-                    <button type="submit" className="btn btn-primary d-block ms-auto" >Add students</button>
+                    <Button  title='Add'/>
                 </form>
             </Modal>
             {/*Киевская Орозбекова/Турусбекова*/}

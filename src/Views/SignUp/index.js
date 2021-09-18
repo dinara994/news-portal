@@ -38,7 +38,7 @@ const SignUp = () => {
                             <input type="email" className="form-control" id="inputEmail4"/>
                         </div>
                     </div>
-                    <Button />
+                    <Button title='Sign up'/>
                 </div>
 
             </div>

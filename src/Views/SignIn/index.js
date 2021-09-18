@@ -15,8 +15,9 @@ const SignIn = () => {
                                placeholder='Password...'>Password:</label>
                         <input type="password" className="form-control" id="inputPassword4"/>
                     </div>
-                    <Button />
                 </div>
+                <Button title='Sign in'/>
+
             </div>
 
             <div>

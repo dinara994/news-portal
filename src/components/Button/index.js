@@ -1,10 +1,12 @@
 import React from 'react';
 
-const Button = () => {
+const Button = ({onClick, title, color='primary'}) => {
+    //color - default(поумолчанию) значение
     return (
-        <div className='d-flex align-items-center justify-content-center mt-5'>
-            <button className='btn btn-outline btn-sign-up'>Sign up</button>
-        </div>
+            <button onClick={onClick}
+                     className={`d-block ms-auto btn btn-${color} btn-lg`}>{title}
+            </button>
+
     );
 };
 
