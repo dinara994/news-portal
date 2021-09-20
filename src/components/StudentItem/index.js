@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from "../Button";
 
-const StudentItem = ({item, idx}) => {
+const StudentItem = ({item, idx, deleteStudent}) => {
     return (
         <tbody>
         <tr>
@@ -14,10 +14,11 @@ const StudentItem = ({item, idx}) => {
             <td className='py-4 px-4'>{item.group}</td>
             <td className='py-4 px-4'>{item.status}</td>
             <td className='py-4 px-4'>{item.gender}</td>
+            <td className='py-4 px-4'>{item.comment}</td>
             <td className='py-4 px-4'>
                 <div className='d-flex'>
                     <Button  title='edit' color='warning'/>
-                    <Button  title='delete' color='danger'/>
+                    <Button  title='delete' color='danger' onClick={() => deleteStudent(item.id)}/>
                 </div>
             </td>
         </tr>
