@@ -17,9 +17,7 @@ const SignIn = () => {
                     </div>
                 </div>
                 <Button title='Sign in'/>
-
             </div>
-
             <div>
             </div>
         </div>
