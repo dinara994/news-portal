@@ -27,12 +27,13 @@
 
 }
 .header-btn {
-    border: inherit;
-    background: darkkhaki;
     width: 150px;
     height: 30px;
+    border: inherit;
+    background: #013e76;
+   color: #fff;
 }
 .active {
     text-decoration:  underline;
-    color: blue;
+    color: #013e76;
 }

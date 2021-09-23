@@ -9,7 +9,6 @@ const StudentItem = ({item, idx, deleteStudent, updateStudent}) => {
     const closeModal = () => {
         setShowModal(false)
     }
-
     const saveData = (data) => {
         updateStudent(item.id, data)
         closeModal()

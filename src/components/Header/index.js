@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './style.css'
 import {NavLink} from "react-router-dom";
 import axios from "axios";
+import logo from '../icon/Euronews_2016_Stacked.png'
 
 
 const Header = () => {
@@ -28,7 +29,9 @@ const Header = () => {
 
     return (
         <header className="header ms-2 me-2 d-flex justify-content-between align-items-center">
-            <NavLink  to='/' className="sides Logo">LOgo</NavLink>
+            <NavLink  to='/' className="sides logo" >
+                <img src={logo} alt=""/>
+            </NavLink>
             <div className='d-flex me-3'>
                 <NavLink exact to='/' className='me-3'>Home</NavLink>
                 <NavLink to='/news'  className='me-3'>News</NavLink>

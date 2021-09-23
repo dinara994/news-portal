@@ -4,19 +4,21 @@ import axios from "axios";
 import StudentItem from "../../components/StudentItem";
 import Button from "../../components/Button";
 import ModalStudent from "../../components/ModalStudent";
+import Spinner from "../../components/Spinner";
 //валидация полей
 
 
 const Students = () => {
     const [students, setStudents] = useState([])
     const [showModal, setShowModal] = useState(false);
-
+const [isLoading, setIsLoading] = useState(true)
 
     const sendData = (data) => {
         axios.post('https://613f1faee9d92a0017e17474.mockapi.io/students', data) //отправил данные на backand
             .then(({data: student}) => {
                 setStudents([...students, student]) //получил результат добавь студента в []
                 setShowModal(false) //выключи модалку
+                setIsLoading(false)
 
             })
     }
@@ -34,8 +36,18 @@ const Students = () => {
 
     useEffect(() => {
         axios('https://613f1faee9d92a0017e17474.mockapi.io/api/students')
-            .then(({data}) => setStudents(data))
+            .then(({data}) => {
+                setStudents(data)
+                setIsLoading(false)
+            })
     }, [])
+
+    if (isLoading) {
+        return (
+            <Spinner />
+        )
+    }
+
 
 
     return (

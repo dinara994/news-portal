@@ -17,6 +17,7 @@ const News = () => {
            setLoading(false)
             })
     }, [])
+
     if (loading) {
         return <Spinner/>
     }
@@ -24,9 +25,7 @@ const News = () => {
     return (
 
         <div className='container'>
-
             <div className='row'>
-
                   {
                       news.map(el =>
                           <div key={el.id} className='col-md-4 mt-5'>
@@ -34,11 +33,8 @@ const News = () => {
                               <img src={el.img} alt="" className='img-news' width='400' height='200'/>
                               <p>{el.title}</p>
                               </Link>
-
                           </div>)
                   }
-
-
             </div>
         </div>
     );

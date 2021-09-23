@@ -31,6 +31,7 @@ img {
 }
 .main {
   flex: 1;
+    padding: 18px;
 }
 .sign-up {
     min-height: 100vh;
@@ -42,4 +43,7 @@ img {
     height: 42px;
     padding: 12px 20px;
     border-radius: 5px;
+}
+.logo {
+    max-width: 120px;
 }
