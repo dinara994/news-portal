@@ -35,9 +35,7 @@ const StudentItem = ({item, idx, deleteStudent, updateStudent}) => {
                 <ModalStudent show={showModal} //показать
                               hide={setShowModal} //скрыть
                               item={item} //initialValue - для редактирование
-                              onSubmit={saveData}
-
-                />
+                              onSubmit={saveData}/>
             </td>
         </tr>
         </tbody>

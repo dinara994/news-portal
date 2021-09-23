@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Carousel from 'react-elastic-carousel';
 import axios from "axios";
-import NewsDetails from "../NewsDetails";
 
 const Home = () => {
     const [newDet, setNewDet] = useState([])
