@@ -17,7 +17,7 @@ const StudentItem = ({item, idx, deleteStudent, updateStudent}) => {
     return (
         <tbody>
         <tr>
-            <td className='py-4 px-3 ' scope="row">{idx + 1}</td>
+            <td className='py-4 px-3 ' >{idx + 1}</td>
             <td className='py-4 px-4'>{item.name}</td>
             <td className='py-4 px-4'>{item.phone}</td>
             <td className='py-4 px-4'>{item.contract}</td>
