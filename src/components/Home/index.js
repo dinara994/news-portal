@@ -19,7 +19,6 @@ const Home = () => {
                                 <img src={news.img} alt=""/>
                                 <p>{news.title}</p>
                             </div>
-
                         )
                     }
                 </Carousel>
