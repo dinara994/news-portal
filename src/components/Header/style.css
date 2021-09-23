@@ -1,6 +1,7 @@
 .header {
     padding: 20px;
 }
+
 .modal-window {
     position: fixed;
     width: 100%;
@@ -13,27 +14,40 @@
     align-items: center;
     z-index: 99;
 }
+
 .modal-content {
     max-width: 40%;
     padding: 20px;
     position: relative;
 }
+
 .close-modal {
     position: absolute;
     right: 10px;
     top: 10px;
     font-size: 18px;
-    border: inherit;
+    border: none;
+    background-color: white;
 
 }
+
 .header-btn {
     width: 150px;
-    height: 30px;
+    height: 35px;
     border: inherit;
     background: #013e76;
-   color: #fff;
+    color: #fff;
+    border-radius: 5px;
 }
+
 .active {
-    text-decoration:  underline;
+    text-decoration: underline;
     color: #013e76;
 }
+
+
+
+/*----------------MODAL-----------------*/
+
+
+

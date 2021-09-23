@@ -32,7 +32,7 @@ const Header = () => {
             <NavLink  to='/' className="sides logo" >
                 <img src={logo} alt=""/>
             </NavLink>
-            <div className='d-flex me-3'>
+            <div className='d-flex justify-content-center align-items-center me-3'>
                 <NavLink exact to='/' className='me-3'>Home</NavLink>
                 <NavLink to='/news'  className='me-3'>News</NavLink>
                 <NavLink to='/students'  className='me-3'>Students</NavLink>
@@ -81,7 +81,6 @@ const Header = () => {
 
             </div>
             </div>
-
         </header>
     );
 };

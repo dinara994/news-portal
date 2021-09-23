@@ -28,7 +28,7 @@ const News = () => {
             <div className='row'>
                   {
                       news.map(el =>
-                          <div key={el.id} className='col-md-4 mt-5'>
+                          <div key={el.id} className='col-md-6 col-lg-4 mt-5'>
                               <Link to={`/news/${el.id}`}>
                               <img src={el.img} alt="" className='img-news' width='400' height='200'/>
                               <p>{el.title}</p>

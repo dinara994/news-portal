@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Carousel from 'react-elastic-carousel';
 import axios from "axios";
+import NewsDetails from "../NewsDetails";
 
 const Home = () => {
     const [newDet, setNewDet] = useState([])
@@ -11,8 +12,7 @@ const Home = () => {
     },[])
 
     return (
-        <div className='container'>
-            <div className="main">
+        <>
                 <Carousel className='owl-theme' loop margin={10} nav>
                     {
                         newDet.slice(0,6).map(news =>
@@ -24,8 +24,7 @@ const Home = () => {
                         )
                     }
                 </Carousel>
-            </div>
-        </div>
+        </>
     );
 };
 

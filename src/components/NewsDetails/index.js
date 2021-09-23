@@ -18,7 +18,6 @@ const NewsDetails = () => {
             try {
                 const {data} = await axios(`https://613f1faee9d92a0017e17474.mockapi.io/news-portal/${id}`)
                 setNewDet(data)
-                console.log(data)
             } catch (e) {
                 setNotFound(true)
             } finally {
@@ -38,7 +37,7 @@ const NewsDetails = () => {
     return (
         <div className='container'>
             <div className='row'>
-                <div className='col-md-6'>
+                <div className='col-md-6 '>
                     <img className='my-5' src={newDet.img} alt=""/>
                     <p>Comments:</p>
                     <form action="./" method="post">
@@ -48,11 +47,11 @@ const NewsDetails = () => {
                             <textarea className='p-2' name="comment" id="comment" placeholder='Comments...'></textarea>
                         </div>
                         <span>Опубликовать
-                        <Button />
+                        <Button title='Add comment'/>
                         </span>
                     </form>
                 </div>
-                <div className='col-md-6 my-5'>
+                <div className='col-xl-6 col-lg-12 my-5'>
                     <h3 className='mx-2'>{newDet.title}</h3>
                     <p className='my-3'>{newDet.description}</p>
                     <span className='mt-4'> <b>Author:</b> {newDet.author}</span>
